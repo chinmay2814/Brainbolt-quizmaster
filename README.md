@@ -5,12 +5,23 @@ An adaptive quiz platform that dynamically adjusts difficulty based on user perf
 ## Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/chinmay2814/Brainbolt-quizmaster.git
+cd Brainbolt-quizmaster #folder where this is cloned
+
+# Run with Docker (single command)
 docker-compose up --build
 ```
 
-Then open: **http://localhost:3000**
+Open **http://localhost:3000** in your browser.
 
-📖 **[View Engineering Documentation →](http://localhost:3000/engineering)** — Deep dive into architecture, algorithms, and technical decisions.
+---
+
+### 📖 Engineering Documentation
+
+Want to understand how it works under the hood? Check out the **[Engineering Architecture page →](http://localhost:3000/engineering)**
+
+Covers system design, the adaptive difficulty algorithm (momentum + hysteresis), database schema, API design, consistency strategies, and all the technical decisions.
 
 ---
 
