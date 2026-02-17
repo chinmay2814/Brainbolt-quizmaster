@@ -1,0 +1,65 @@
+# ============================================
+# BrainBolt - Docker Compose Configuration
+# ============================================
+# 
+# Run with: docker-compose up --build
+# 
+# Services:
+#   - redis: Cache, leaderboards, real-time state
+#   - api: Backend Express server (port 3001)
+#   - web: Frontend Next.js app (port 3000)
+#
+# ============================================
+
+services:
+  # Redis - Cache and real-time data store
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # Backend API Server
+  api:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - REDIS_URL=redis://redis:6379
+      - DB_PATH=/app/data/brainbolt.db
+      - JWT_SECRET=${JWT_SECRET:-brainbolt-secret-change-in-production}
+      - CORS_ORIGIN=http://localhost:3000
+      - NODE_ENV=production
+    volumes:
+      - api_data:/app/data
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Frontend Web App
+  web:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  redis_data:
+  api_data:

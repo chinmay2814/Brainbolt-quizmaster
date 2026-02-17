@@ -1,0 +1,46 @@
+# Assignment PDF and docs
+*.pdf
+*.plan.md
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+.next/
+out/
+
+# Database
+*.db
+*.db-journal
+*.db-wal
+data/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+.cache/
+.turbo/
+
+# Docker volumes (if local)
+redis_data/
+api_data/
