@@ -130,6 +130,12 @@ export default function QuizPage() {
           <span className="text-xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
             BrainBolt
           </span>
+          <a 
+            href="/engineering" 
+            className="hidden sm:inline-flex items-center gap-1 px-3 py-1 text-xs font-medium text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors"
+          >
+            📖 Docs
+          </a>
         </div>
         <div className="flex items-center gap-3 md:gap-4">
           <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl">

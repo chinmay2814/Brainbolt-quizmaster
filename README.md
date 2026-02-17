@@ -4,13 +4,13 @@ An adaptive quiz platform that dynamically adjusts difficulty based on user perf
 
 ## Quick Start
 
-### Single Command to Run Everything
-
 ```bash
 docker-compose up --build
 ```
 
 Then open: **http://localhost:3000**
+
+📖 **[View Engineering Documentation →](http://localhost:3000/engineering)** — Deep dive into architecture, algorithms, and technical decisions.
 
 ---
 
@@ -202,30 +202,14 @@ brainbolt/
     │   ├── layout.tsx
     │   ├── page.tsx            # Auth page
     │   ├── globals.css
-    │   └── quiz/
-    │       └── page.tsx        # Quiz interface
+    │   ├── quiz/
+    │   │   └── page.tsx        # Quiz interface
+    │   └── engineering/
+    │       └── page.tsx        # Technical documentation
     └── lib/
         ├── api.ts              # API client
         └── auth.tsx            # Auth context
 ```
-
----
-
-## Evaluation Criteria Coverage
-
-| Criteria | Implementation |
-|----------|----------------|
-| **Frontend (25%)** | Next.js + React, Tailwind CSS, responsive, component-based |
-| **LLD (25%)** | Clear separation, documented algorithms, typed interfaces |
-| **Functional (25%)** | All core features working: adaptive quiz, streaks, leaderboards |
-| **Edge Cases (15%)** | Ping-pong, idempotency, rate limiting, optimistic locking |
-| **Operational (10%)** | Docker single-command, Redis for real-time, SSE for updates |
-
----
-
-## Author
-
-Built for Scaler SDE Assignment (E_2_3)
 
 ---
 
