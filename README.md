@@ -25,6 +25,15 @@ Covers system design, the adaptive difficulty algorithm (momentum + hysteresis),
 
 ---
 
+## 🎥 Demo Video
+
+See BrainBolt in action — adaptive difficulty, streak multiplier, and real-time leaderboard updates:
+
+🔗 **Watch Demo:**  
+https://drive.google.com/file/d/17qSj1BlrSG_-KoXDHfHnYWYFBwBiaj1p/view?usp=sharing
+
+---
+
 ## Features
 
 ### Core Functionality
